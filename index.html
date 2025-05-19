@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sistema Solar</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 30px;
+                }
+                h1 {
+                    color:blueviolet;
+                    font-size:160%;
+                    border: 2px solid black;
+                    text-align:left;
+                    border-radius: 10px;
+                    padding: 10px;
+                }
+                .container{
+                    display: flex;
+                    gap: 20px;
+                    align-items: flex-start;
+                }
+                input {
+                    margin: 5px;
+                }
+                .error {
+                    color: red;
+                }
+                img{
+                    max-width: 400px;
+                    height: auto;
+                    border: 1px solid #ccc
+                }
+            </style>
+    </head>
+    <body>
+        <h1>El Sistema Solar</h1>
+        
+        <button onclick="acerca()">Acerca de Sistema Solar</button>
+        <button onclick="esconderImagen()">Terminar</button>
+
+
+        <hr>
+
+        <h2>Seleccione el astro deseado</h2>
+<aside>
+    <form action ="planetas">
+        <div class="container">
+            <select id = "astro" size = "15" onchange = "mostrarImagen()">
+                <option value="sol.jpg">Sol</option>
+                <option value="mercurio.jpg">Mercurio</option>
+                <option value="venus.jpg">Venus</option>
+                <option value="tierra.jpg">La Tierra</option>
+                <option value="marte.jpg">Marte</option>
+                <option value="asteroide.jpg">Asteroides</option>
+                <option value="jupiter.jpg">Jupiter</option>
+                <option value="saturno.jpg">Saturno</option>
+                <option value="meteorito.jpg">Meteorito</option>
+                <option value="neptuno.jpg">Neptuno</option>
+                <option value="urano.jpg">Urano</option>
+                <option value="pluton.jpg">Plutón</option>
+                <option value="nave.jpg">Nave Espacial</option>
+            </select>
+         </div>
+    </form>
+ </aside>
+        <main>
+            <img id = "imagen" src = "sol.jpg" alt = "Sol" style = "display:none"> 
+        </main>
+    
+
+<script>
+        function mostrarImagen() {
+            const astroseleccionado = document.getElementById("astro").value;
+            const imagen = document.getElementById("imagen");
+            
+            imagen.src = astroseleccionado;
+            imagen.style.display = "block"; // ¡Asegura que se muestre!
+        }
+
+        function acerca() {
+        alert("Este programa muestra elementos del sistema solar. Selecciona un astro para verlo.");
+        }
+
+        function esconderImagen() {
+        if (confirm("¿Deseas cerrar la aplicación?")) {
+            window.close(); // può non funzionare in tutti i browser
+        }
+        }
+  </script>
+
+</body>
+</html>
+
+    
